@@ -8,12 +8,66 @@
         <servlet-name>AiWenhao</servlet-name> <!--give any name-->
         <servlet-class>com.AiWenhao.week2.demo.HelloWorldServlet</servlet-class> <!--package + name of servlet class-->
     </servlet>
+    <servlet>
+        <servlet-name>LifeCycleServlet</servlet-name>
+        <servlet-class>com.AiWenhao.week3.demo.LifeCycleServlet</servlet-class>
+    </servlet>
+    <!--automatic code-->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.AiWenhao.week3.demo.RegisterServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>AiWenhao</servlet-name>
         <url-pattern>/hello</url-pattern> <!--URL must start with / -->
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LifeCycleServlet</servlet-name>
+        <url-pattern>/life</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern><!--write this url to action-->
     </servlet-mapping>
     <!-- x = 5 , a = x ,so we can see a = 5
     so /hello == com.AiWenhao.week2.demo.HelloWorldServlet
     -->
 
 </web-app>
+
+
+<!--{
+
+    <servlet>
+        <servlet-name>JDBCDmeoServlet</servlet-name>
+        <servlet-class>com.AiWenhao.week4.demo.JDBCDmeoServlet</servlet-class>
+      String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+//        String url = "jdbc:sqlserver://localhost;databaseName = userdb;";
+//        String username = "sa";
+//        String password = "123456";-->
+        <!--        set in web.xml as config parameter -,for only one servlet ,JDBCDmeoServlet -->
+        <!--<init-param>-->
+        <!--<param-name>driver</param-name>-->
+        <!--<param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+        <!--<param-name>url</param-name>-->
+        <!--<param-value>jdbc:sqlserver://localhost;databaseName = userdb;</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+        <!--<param-name>username</param-name>-->
+        <!--<param-value>sa</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+        <!--<param-name>password</param-name>-->
+        <!--<param-value>123456</param-value>-->
+        <!--</init-param>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+        <!--        &lt;!&ndash; load and call init() when tomcat start&ndash;&gt;-->
+        <!--        </servlet>-->
+        <!--<servlet-mapping>-->
+        <!--<servlet-name>JDBCDmeoServlet</servlet-name>-->
+        <!--<url-pattern>/jdbc</url-pattern>-->
+        <!--</servlet-mapping>
+}-->
