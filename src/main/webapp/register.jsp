@@ -9,17 +9,30 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        td.right{
+            text-align: right;
+            height: 25px;
+        }
+    </style>
 </head>
 <body>
-    <form method="post" action="register"><!--within doPost() in servlet-->
-        Username:<input type="text" name="name" required><br/>
-        Password:<input type="password" name="password" required><br/>
-        Email:<input type="email" name="email" required><br/>
-        Gender:<input type="radio" name="gender" value="male">Male<input type="radio" name="gender" value="female">Female<br/>
-        <!--if name is same it make array-->
-        Birthdate:<input type="datetime-local" name="yyyy-mm-dd" required><br/>
-        <input type="submit" value="Register"/>
-
-    </form>
+<h1>New User Registration</h1>
+<form method="post" action="register">
+    <table>
+        <tr> <td class="right">Username：</td> <td><input type="text" name="Username" required><br/></td></tr>
+        <tr> <td class="right">password：</td> <td><input type="password" name="password" required minlength="8"><br/></td></tr>
+        <tr> <td class="right">Email：</td> <td><input type="email" name="Email" required><br/></td></tr>
+        <tr>
+            <td class="right">Gender：</td>
+            <td>
+                <input type="radio" name="Gender" value="Male" checked="checked"/> Male <!-- checked="checked"默认选择项 -->
+                <input type="radio" name="Gender" value="Female"/> Female
+            </td>
+        </tr>
+        <tr> <td class="right">Birthdate：</td> <td><input type="date" name="Date" required dataformatas="yyyy-dd-mm"><br/></td></tr>
+        <tr> <td></td><td><input type="submit" value="Register"/></td>  </tr>
+    </table>
+</form>
 </body>
 </html>
