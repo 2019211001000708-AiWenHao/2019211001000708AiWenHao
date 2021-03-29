@@ -5,18 +5,19 @@
   Time: 22:46
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-    <style>
-        td.right{
-            text-align: right;
-            height: 25px;
-        }
-    </style>
-</head>
-<body>
+<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
+<%--<html>--%>
+<%--<head>--%>
+<%--    <title>Title</title>--%>
+<%--    <style>--%>
+<%--        td.right{--%>
+<%--            text-align: right;--%>
+<%--            height: 25px;--%>
+<%--        }--%>
+<%--    </style>--%>
+<%--</head>--%>
+<%--<body>--%>
+<%@include file="header.jsp"%>
 <h1>New User Registration</h1>
 <form method="post" action="register">
     <table>
@@ -34,5 +35,6 @@
         <tr> <td></td><td><input type="submit" value="Register"/></td>  </tr>
     </table>
 </form>
-</body>
-</html>
+<%@include file="footer.jsp"%>
+<%--</body>--%>
+<%--</html>--%>
