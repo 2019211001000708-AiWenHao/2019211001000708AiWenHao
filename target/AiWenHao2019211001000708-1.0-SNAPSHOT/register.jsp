@@ -19,7 +19,7 @@
 <%--<body>--%>
 <%@include file="header.jsp"%>
 <h1>New User Registration</h1>
-<form method="post" action="register">
+<form method="post" action="Register">
     <table>
         <tr> <td class="right">Username：</td> <td><input type="text" name="Username" required><br/></td></tr>
         <tr> <td class="right">password：</td> <td><input type="password" name="password" required minlength="8"><br/></td></tr>
