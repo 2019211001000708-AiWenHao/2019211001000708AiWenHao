@@ -80,7 +80,10 @@
     <!-- x = 5 , a = x ,so we can see a = 5
     so /hello == com.AiWenhao.week2.demo.HelloWorldServlet
     -->
-
+<!--when you run app一first request send to home- HomeServLet-->
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
 </web-app>
 
 
