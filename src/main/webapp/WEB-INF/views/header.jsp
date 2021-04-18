@@ -1,3 +1,4 @@
+<%@ page import="com.AiWenhao.model.User" %>
 <html>
  <head>
    <title>My Online Shop</title>
@@ -32,10 +33,27 @@
    </td>
    </tr>
    <tr height="25"><td align="right"><font size="18" color="blue">
-   Welcome,<font size="18" color="red"> Guest</font>
+        Welcome,
+<%
+    //get session attribute
+   User user = (User) session.getAttribute("user");// name of attribte
+    if(user != null){
+        //print username
+        out.println(user.getUsername());
+    }else{//print guest
+
+
+%>
+       <font size="18" color="red"> Guest</font>
+<%}//end of else    %>
    </font></td> </tr>
   <tr height="20"><td align="right">
-   <br> <a href="#">Logout</a>
+      <%
+          //if user in session - print logout --- no logout
+          if (session.getAttribute("user")!= null){
+      %>
+   <br> <a href="logout">Logout</a><!--request go to controller - logoutServlet-->
+      <%}//end of it %>
   <br><a href="#">My Cart</a><br/>
 <a href="register.jsp">Register Here</a>
   </td></tr>

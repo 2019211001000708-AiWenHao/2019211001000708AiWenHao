@@ -21,10 +21,34 @@
         out.println(request.getAttribute("message"));
     }
 %>
+<%
+    //read cookies
+    Cookie[] allCookies = request.getCookies();//give all cookies
+    String username= "",password= "",rememberMeVal= "";
+    if (allCookies != null) {
+        //we read 3 cookies
+        for (Cookie c:allCookies) {
+            if (c.getName().equals("cUsername")){
+                ////get Values of this cookies
+                username= c.getValue();
+            }
+            if (c.getName().equals("cPassword")){
+                ////get Values of this cookies
+                password= c.getValue();
+            }
+            if (c.getName().equals("cRememberMe")){
+                ////get Values of this cookies
+               rememberMeVal = c.getValue();
+            }
+        }
+
+    }
+%>
 <form method="post" action="/2019211001000708AiWenHao_war_exploded/login">
     <table>
-        <tr> <td>Username:</td> <td><input type="text" name="Username" required><br/></td></tr>
-        <tr> <td>password:</td> <td><input type="password" name="password" required minlength="2"><br/></td></tr>
+        <tr> <td>Username:</td> <td><input type="text" name="Username" value="<%=username%>"><br/></td></tr>
+        <tr> <td>password:</td> <td><input type="password" name="password" value="<%=password%>"><br/></td></tr>
+        <input type="checkbox" name="rememberMe " value="1" <%=rememberMeVal.equals("1") ?"checked":""%> /> RememberMe<br/>
         <tr> <td></td><td><input type="submit" value="Login"/></td>  </tr>
     </table>
 </form>

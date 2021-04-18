@@ -25,13 +25,25 @@ public class UserDao implements IUserDao {
     @Override
     public int updateUser(Connection con, User user) throws SQLException {
         //update .... where id=?
-        return 0;
+        //TODO 5.1 - write update sqZ where id =?
+        //TODO 5.2 - create prepared statement
+        //TODO 5.3 - executeUpdate()
+        //TODO 5.4 return int
+
+        String sql="update Usertable set username=?,password=?,email=?,gender=?,birthdate=? where id=?";
+        PreparedStatement pstmt= con.prepareStatement(sql);
+        pstmt.setString(1,user.getUsername());
+        pstmt.setString(2,user.getPassword());
+        pstmt.setString(3,user.getEmail());
+        pstmt.setString(4,user.getGender());
+        pstmt.setDate(5,new java.sql.Date(user.getBirthdate().getTime()));
+        pstmt.setInt(6,user.getId());
+        return pstmt.executeUpdate();
     }
 
     @Override
     public User findById(Connection con, Integer id) throws SQLException {
-       ///select .... where id=?
-        return null;
+    return null;
     }
 
     @Override

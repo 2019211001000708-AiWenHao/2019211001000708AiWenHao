@@ -22,7 +22,7 @@
 <form method="post" action="Register">
     <table>
         <tr> <td class="right">Username：</td> <td><input type="text" name="Username" required><br/></td></tr>
-        <tr> <td class="right">password：</td> <td><input type="password" name="password" required minlength="8"><br/></td></tr>
+        <tr> <td class="right">password：</td> <td><input type="password" name="password"><br/></td></tr>
         <tr> <td class="right">Email：</td> <td><input type="email" name="Email" required><br/></td></tr>
         <tr>
             <td class="right">Gender：</td>

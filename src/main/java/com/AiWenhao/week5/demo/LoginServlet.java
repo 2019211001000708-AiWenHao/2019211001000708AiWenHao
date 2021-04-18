@@ -32,13 +32,51 @@ public class LoginServlet extends HttpServlet {
         String Username = request.getParameter("Username");//与login保持一致
         String password = request.getParameter("password");
 
-        UserDao userDao = new UserDao();
+
         try {
+            UserDao userDao = new UserDao();
             User user = userDao.findByUsernamePassword(con, Username, password);
             if (user != null) {
                 //valid
+                //add code for remember me
+                String rememberMe= request.getParameter("rememberMe");//1=checked
+                if (rememberMe!= null && rememberMe.equals("1")){
+                    Cookie usernameCookie= new Cookie("cUsername",user.getUsername());
+                    Cookie passwordCookie= new Cookie("cPassword",user.getPassword());
+                    Cookie rememberMeCookie= new Cookie("cRememberMe",rememberMe);
+
+                    //set age of cookies
+                    usernameCookie.setMaxAge(5);
+                    passwordCookie.setMaxAge(5);
+                    rememberMeCookie.setMaxAge(5);
+
+                    response.addCookie(usernameCookie);
+                    response.addCookie(passwordCookie);
+                    response.addCookie(rememberMeCookie);
+
+
+                }
+
                 //set user into request
-                request.setAttribute("user", user);//get user info in jsp
+
+//                //week 8 code - demo #1 use cookie for session
+//                //create cookie
+//                //step 1:create an object of cookie class
+//                Cookie c = new Cookie("sessionid","" + user.getId());
+//                //step 2:set age of cookie
+//                c.setMaxAge(10*60);
+//                //step 3:add cookie into response
+//                response.addCookie(c);
+
+                //create a session
+                HttpSession session =request.getSession();
+                System.out.println("session id -->" + session.getId());
+                //set time for session
+                session.setMaxInactiveInterval(10);
+
+                //set User model into request
+                //change(one page) to session
+                session.setAttribute("user", user);//get user info in jsp
                 request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request, response);
 
             } else {
