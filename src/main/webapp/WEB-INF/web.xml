@@ -36,7 +36,7 @@
 
     <servlet-mapping>
         <servlet-name>AiWenhao</servlet-name>
-        <url-pattern>/hello</url-pattern> <!--URL must start with / -->
+        <url-pattern>/hello1</url-pattern> <!--URL must start with / -->
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LifeCycleServlet</servlet-name>
@@ -84,6 +84,34 @@
     <welcome-file-list>
         <welcome-file>home</welcome-file>
     </welcome-file-list>
+
+<!--    <filter>-->
+<!--        <filter-name>HelloServLet</ filter-name>-->
+<!--        <filter-class>com.AiWenhao.filter.HelloFilter</ filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--    <filter-name>HelloFilter</ filter-name>-->
+<!--    <url-pattern>/hello</url-pattern>-->
+<!--    </filter-mapping>-->
+<!--    <filter>-->
+<!--        <filter-name>LoggerFilter</ filter-name>-->
+<!--        <filter-class>com.AiWenhao.filter.LoggerFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>LoggerFilter</ filter-name>-->
+<!--    <url-pattern>/hello</url-pattern>-->
+<!--    </filter-mapping>-->
+<!--        !&#45;&#45;-->
+<!--        3rd one &ndash;&gt;-->
+<!--    <filter>-->
+<!--    <filter-name>AuthFilter</ filter-name>-->
+<!--    <filter-class>com.AiWenhao.filter.AuthFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--    <filter-name> AuthFilter</filter-name>-->
+<!--    <url-pattern>/hello</url-pattern>-->
+<!--    </filter-mapping>-->
+
 </web-app>
 
 

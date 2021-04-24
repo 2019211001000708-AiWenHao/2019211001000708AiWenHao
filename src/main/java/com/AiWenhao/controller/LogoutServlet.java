@@ -14,7 +14,7 @@ public class LogoutServlet extends HttpServlet {
         //false means get existing session
         request.getSession(false).invalidate();//kill session right now
         request.setAttribute("message","you have successful Logged out");
-        request.getRequestDispatcher("WEB-INF/views/Login.jsp").forward(request,response);
+        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
     }
 
     @Override
