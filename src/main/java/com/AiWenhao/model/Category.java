@@ -71,7 +71,7 @@ public class Category {
         ResultSet rs= pt.executeQuery();
         while (rs.next()) {
             Category c= new Category();
-            c.setCategoryId(rs.getInt("categoryId"));
+            c.setCategoryId(rs.getInt("CategoryId"));
             c.setCategoryName(rs.getString("categoryName"));
             c.setDescription(rs.getString("description"));
             list.add((c));
@@ -90,4 +90,5 @@ public class Category {
         }
         return categoryName;
     }
+
 }
