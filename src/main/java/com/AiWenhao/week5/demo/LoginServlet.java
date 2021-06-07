@@ -57,6 +57,8 @@ public class LoginServlet extends HttpServlet {
 
                 }
 
+
+
                 //set user into request
 
 //                //week 8 code - demo #1 use cookie for session

@@ -112,40 +112,15 @@
 <!--    <url-pattern>/hello</url-pattern>-->
 <!--    </filter-mapping>-->
 
+    <filter>
+        <filter-name>AiWenhaoFilter</filter-name>
+        <filter-class>com.lab2.AiWenhaoFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AiWenhaoFilter</filter-name>
+        <url-pattern>/lab2/welcome.jsp</url-pattern>
+        <url-pattern>/lab2/validation.jsp</url-pattern>
+    </filter-mapping>
+
 </web-app>
 
-
-<!--{
-
-    <servlet>
-        <servlet-name>JDBCDmeoServlet</servlet-name>
-        <servlet-class>com.AiWenhao.week4.demo.JDBCDmeoServlet</servlet-class>
-      String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-//        String url = "jdbc:sqlserver://localhost;databaseName = userdb;";
-//        String username = "sa";
-//        String password = "123456";-->
-        <!--        set in web.xml as config parameter -,for only one servlet ,JDBCDmeoServlet -->
-        <!--<init-param>-->
-        <!--<param-name>driver</param-name>-->
-        <!--<param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>-->
-        <!--</init-param>-->
-        <!--<init-param>-->
-        <!--<param-name>url</param-name>-->
-        <!--<param-value>jdbc:sqlserver://localhost;databaseName = userdb;</param-value>-->
-        <!--</init-param>-->
-        <!--<init-param>-->
-        <!--<param-name>username</param-name>-->
-        <!--<param-value>sa</param-value>-->
-        <!--</init-param>-->
-        <!--<init-param>-->
-        <!--<param-name>password</param-name>-->
-        <!--<param-value>123456</param-value>-->
-        <!--</init-param>-->
-        <!--<load-on-startup>1</load-on-startup>-->
-        <!--        &lt;!&ndash; load and call init() when tomcat start&ndash;&gt;-->
-        <!--        </servlet>-->
-        <!--<servlet-mapping>-->
-        <!--<servlet-name>JDBCDmeoServlet</servlet-name>-->
-        <!--<url-pattern>/jdbc</url-pattern>-->
-        <!--</servlet-mapping>
-}-->
